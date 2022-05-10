@@ -26,3 +26,29 @@
     return a.filter(value => !b.includes(value));
    
   }
+
+// A Narcissistic Number is a positive number which is the sum of its own digits, each raised to the power of the number of digits in a given base.
+//  In this Kata, we will restrict ourselves to decimal (base 10).
+// Your code must return true or false (not 'true' and 'false') depending upon whether the given number is a Narcissistic number in base 10. 
+// This may be True and False in your language, e.g. PHP.
+
+  function narcissistic(value) {
+    // Code me to return true or false
+      let digit = 0;
+      let sumOfDigit = 0;
+    if(value > 9 ) {
+      digit = value.toString().split('');
+      for(let i = 0; i < digit.length; i++) {
+        sumOfDigit += Math.pow(Number(digit[i]), digit.length)
+      }
+      if(sumOfDigit === value) {
+        return true
+      } else {
+        return false
+        }
+      
+    } else {
+      return true;
+    }
+  
+  }
